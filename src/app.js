@@ -7,13 +7,14 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 const port = process.env.PORT || 3000
+
 //define paths for Express config
 const publicDirectoryPath= path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 
-//Setup handlers engin and views location
-app.set('view engine','hbs')
+//Setup handlers engine and views location
+app.set('view engine','hbs') //tell express what type of template engine you use.
 app.set('views',viewsPath)
 hbs.registerPartials(partialsPath)
 
@@ -21,6 +22,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
+    console.log('starting page loaded')
     res.render('index',{
         title: 'Weather',
         name:'Kabinad Teshager'
