@@ -16,10 +16,15 @@
         <p>Use this site to get your weather!</p>
 
         <form id="locationForm">
-            <input id="locationInput" placeholder="Location">
+            <input type="text" id="my-location" placeholder="Location">
             <button>Search</button>
+            <button type="button" id="pickLocation">Pick</button>
         </form>
-
+        <div id="myDiv" >
+            <button id="find-me" margin-top="10">Use my location</button><br />
+            <p id="status"></p>
+            <a id="map-link" target="_blank"></a>
+        </div>
         <p id="message-1"></p>
         <p id="message-2"></p>
     </div>
