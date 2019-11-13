@@ -54,8 +54,8 @@ app.get('/weather', (req, res) => {
                 return res.send({ error })
             }
 
-            const key = "AIzaSyCEItBahI_uyBezPNMDe8h-AxLvQSGdX9Y"
-            const uriString = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyCEItBahI_uyBezPNMDe8h-AxLvQSGdX9Y`
+            const APIKEY = process.env.GEOCODE_API_KEY
+            const uriString = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${APIKEY}`
 
             request(uriString, function (error, response, body) {
                 console.log('error:', error); // Print the error if one occurred
